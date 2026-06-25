@@ -1,0 +1,178 @@
+:root {
+  /* Paleta blanca dominante */
+  --color-bg:        #FFFFFF;
+  --color-surface:   #F5F6F8;
+  --color-surface-2: #ECEEF2;
+  --color-border:    rgba(0,0,0,0.09);
+
+  /* Azul corporativo */
+  --color-blue:      #1E3A5F;
+  --color-blue-mid:  #2A5080;
+  --color-blue-light:#E8EFF7;
+  --color-blue-dim:  rgba(30,58,95,0.08);
+
+  /* Texto negro/oscuro */
+  --color-white:     #FFFFFF;
+  --color-black:     #0A0C10;
+  --color-text:      #1A1D24;
+  --color-text-muted:#5A6275;
+  --color-text-dim:  #9BA3B4;
+
+  /* Tipografía */
+  --font-brand:   'Audiowide', sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+
+  --shadow-sm:   0 1px 4px rgba(0,0,0,0.06);
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.08);
+  --shadow-lg:   0 12px 40px rgba(0,0,0,0.12);
+
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+ul { list-style: none; }
+h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.2; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section { padding: 96px 0; }
+
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-blue);
+  margin-bottom: 14px;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  color: var(--color-black);
+  margin-bottom: 18px;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  max-width: 560px;
+  line-height: 1.75;
+}
+
+.blue-line {
+  width: 40px;
+  height: 3px;
+  background: var(--color-blue);
+  margin-bottom: 20px;
+  border-radius: 2px;
+}
+
+/* ── Botones ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  transition: var(--transition);
+  white-space: nowrap;
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--color-blue);
+  color: #FFFFFF;
+  font-weight: 600;
+  border: 2px solid var(--color-blue);
+}
+.btn-primary:hover {
+  background: var(--color-blue-mid);
+  border-color: var(--color-blue-mid);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(30,58,95,0.25);
+}
+
+.btn-outline {
+  border: 2px solid var(--color-blue);
+  color: var(--color-blue);
+  background: transparent;
+}
+.btn-outline:hover {
+  background: var(--color-blue-dim);
+  transform: translateY(-1px);
+}
+
+.btn-outline-white {
+  border: 2px solid rgba(255,255,255,0.6);
+  color: #FFFFFF;
+  background: transparent;
+}
+.btn-outline-white:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: #fff;
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  border: 1.5px solid var(--color-border);
+  color: var(--color-text-muted);
+  background: transparent;
+}
+.btn-ghost:hover {
+  border-color: var(--color-blue);
+  color: var(--color-blue);
+  background: var(--color-blue-dim);
+}
+
+/* ── Divisor ── */
+.geo-divider {
+  height: 1px;
+  background: var(--color-border);
+}
+
+/* ── Animaciones ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.6s ease both; }
+.delay-1 { animation-delay: 0.08s; }
+.delay-2 { animation-delay: 0.16s; }
+.delay-3 { animation-delay: 0.24s; }
+.delay-4 { animation-delay: 0.32s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up { animation: none !important; }
+}
+
+@media (max-width: 768px) {
+  .section { padding: 64px 0; }
+}
