@@ -1,6 +1,9 @@
-import { Link } from 'react-router-dom';
-import { MessageCircle, Share2, Mail } from 'lucide-react';
+import { MessageCircle, Mail } from 'lucide-react';
 import './Footer.css';
+
+function scrollTo(id) {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+}
 
 export default function Footer() {
   return (
@@ -20,7 +23,7 @@ export default function Footer() {
               <MessageCircle size={18} />
             </a>
             <a href="https://facebook.com/gruporules" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-              <Share2 size={18} />
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
             </a>
             <a href="mailto:contacto@gruporules.com" aria-label="Email">
               <Mail size={18} />
@@ -32,42 +35,25 @@ export default function Footer() {
           <h4 className="footer__nav-title">Navegación</h4>
           <ul className="footer__nav-list">
             {[
-              { to: '/', label: 'Inicio' },
-              { to: '/nosotros', label: 'Sobre Nosotros' },
-              { to: '/servicios', label: 'Servicios' },
-              { to: '/proyectos', label: 'Proyectos' },
-              { to: '/contacto', label: 'Contacto' },
-            ].map(({ to, label }) => (
-              <li key={to}><Link to={to}>{label}</Link></li>
+              { id: 'proyectos', label: 'Proyectos' },
+              { id: 'prestamos', label: 'Préstamos' },
+              { id: 'disenos', label: 'Diseños' },
+              { id: 'topografia', label: 'Topografía' },
+              { id: 'productos', label: 'Productos' },
+              { id: 'contacto', label: 'Contacto' },
+            ].map(({ id, label }) => (
+              <li key={id}>
+                <button onClick={() => scrollTo(id)}>{label}</button>
+              </li>
             ))}
-          </ul>
-        </div>
-
-        <div className="footer__services">
-          <h4 className="footer__nav-title">Servicios</h4>
-          <ul className="footer__nav-list">
-            <li><Link to="/servicios#diseno-interiores">Diseño de Interiores</Link></li>
-            <li><Link to="/servicios#topografia">Topografía</Link></li>
-            <li><Link to="/servicios#financiamiento">Financiamiento</Link></li>
-            <li><Link to="/servicios#melamina">Productos de Melamina</Link></li>
           </ul>
         </div>
 
         <div className="footer__contact">
           <h4 className="footer__nav-title">Contacto</h4>
           <ul className="footer__contact-list">
-            <li>
-              <MessageCircle size={14} />
-              <a href="https://wa.me/51999999999" target="_blank" rel="noopener noreferrer">+51 999 999 999</a>
-            </li>
-            <li>
-              <Mail size={14} />
-              <a href="mailto:contacto@gruporules.com">contacto@gruporules.com</a>
-            </li>
-            <li>
-              <Share2 size={14} />
-              <a href="https://facebook.com/gruporules" target="_blank" rel="noopener noreferrer">Facebook</a>
-            </li>
+            <li><MessageCircle size={14} /><a href="https://wa.me/51999999999" target="_blank" rel="noopener noreferrer">+51 999 999 999</a></li>
+            <li><Mail size={14} /><a href="mailto:contacto@gruporules.com">contacto@gruporules.com</a></li>
           </ul>
         </div>
       </div>

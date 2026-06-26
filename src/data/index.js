@@ -1,153 +1,89 @@
-export const SERVICES = [
-  {
-    id: 'diseno-interiores',
-    title: 'Diseño de Interiores',
-    shortDesc: 'Transformamos espacios para hacerlos más funcionales, cómodos y atractivos.',
-    fullDesc: 'Cada espacio tiene el potencial de convertirse en algo extraordinario. Trabajamos contigo para crear ambientes que reflejen tu personalidad y estilo de vida, optimizando cada metro cuadrado.',
-    icon: '🏠',
-    color: '#C8A96E',
-    subservices: [
-      'Diseño residencial',
-      'Diseño comercial',
-      'Remodelaciones',
-      'Distribución de espacios',
-      'Asesoría en acabados y decoración',
-    ],
-    image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&q=80',
-  },
-  {
-    id: 'topografia',
-    title: 'Topografía',
-    shortDesc: 'Servicios topográficos precisos para proyectos de construcción y gestión territorial.',
-    fullDesc: 'La precisión es nuestra firma. Ofrecemos levantamientos topográficos con tecnología de punta, garantizando datos exactos y confiables para tus proyectos de construcción e ingeniería.',
-    icon: '📐',
-    color: '#2A5080',
-    subservices: [
-      'Levantamientos topográficos',
-      'Georreferenciación',
-      'Curvas de nivel',
-      'Replanteo de obras',
-      'Planos topográficos',
-    ],
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80',
-  },
-  {
-    id: 'financiamiento',
-    title: 'Financiamiento con Garantía',
-    shortDesc: 'Soluciones financieras rápidas mediante garantía de bienes, con procesos transparentes.',
-    fullDesc: 'Entendemos que las necesidades financieras no esperan. Por eso ofrecemos evaluaciones rápidas, tasaciones justas y procesos 100% confidenciales para darte la liquidez que necesitas.',
-    icon: '💼',
-    color: '#1E5C3A',
-    subservices: [
-      'Evaluación rápida',
-      'Tasación transparente',
-      'Atención personalizada',
-      'Confidencialidad garantizada',
-    ],
-    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&q=80',
-  },
-  {
-    id: 'melamina',
-    title: 'Productos de Melamina',
-    shortDesc: 'Diseño y fabricación de muebles funcionales y personalizados a tu medida.',
-    fullDesc: 'Fabricamos muebles que se adaptan perfectamente a tus espacios y necesidades. Cada pieza es diseñada con atención al detalle, usando materiales de calidad para garantizar durabilidad y estética.',
-    icon: '🪑',
-    color: '#5C3A1E',
-    subservices: [
-      'Escritorios',
-      'Closets',
-      'Muebles de cocina',
-      'Estanterías',
-      'Centros de entretenimiento',
-    ],
-    image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80',
-  },
-];
-
 export const PROJECTS = [
   {
     id: 1,
     title: 'Apartamento Minimalista',
-    category: 'diseno-interiores',
-    categoryLabel: 'Diseño de Interiores',
-    year: '2024',
+    category: 'Diseño de Interiores',
     description: 'Rediseño completo de un apartamento de 80m², optimizando espacios y creando ambientes luminosos.',
     image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&q=80',
   },
   {
     id: 2,
     title: 'Levantamiento Zona Industrial',
-    category: 'topografia',
-    categoryLabel: 'Topografía',
-    year: '2024',
+    category: 'Topografía',
     description: 'Levantamiento topográfico de 5 hectáreas para proyecto industrial con georreferenciación completa.',
     image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&q=80',
   },
   {
     id: 3,
     title: 'Cocina Integral Moderna',
-    category: 'melamina',
-    categoryLabel: 'Melamina',
-    year: '2024',
+    category: 'Melamina',
     description: 'Diseño y fabricación de cocina integral con isla central en melamina premium.',
     image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80',
   },
   {
     id: 4,
     title: 'Oficina Corporativa',
-    category: 'diseno-interiores',
-    categoryLabel: 'Diseño de Interiores',
-    year: '2023',
+    category: 'Diseño de Interiores',
     description: 'Transformación de oficina corporativa para 30 personas con concepto open space.',
     image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80',
   },
   {
     id: 5,
     title: 'Replanteo Urbanización',
-    category: 'topografia',
-    categoryLabel: 'Topografía',
-    year: '2023',
+    category: 'Topografía',
     description: 'Replanteo de obras para urbanización residencial con 120 lotes.',
     image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80',
   },
   {
     id: 6,
     title: 'Closet Vestidor Premium',
-    category: 'melamina',
-    categoryLabel: 'Melamina',
-    year: '2023',
+    category: 'Melamina',
     description: 'Vestidor de 12m² con sistema de organización modular en melamina blanca.',
     image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
   },
 ];
 
-export const VALUES = [
-  { title: 'Responsabilidad', desc: 'Cumplimos cada compromiso con puntualidad y dedicación.' },
-  { title: 'Honestidad', desc: 'Transparencia total en cada proceso y presupuesto.' },
-  { title: 'Compromiso', desc: 'Tu proyecto es nuestro proyecto, desde el inicio hasta el final.' },
-  { title: 'Calidad', desc: 'Estándares altos en cada trabajo que emprendemos.' },
-  { title: 'Innovación', desc: 'Soluciones creativas y actualizadas para cada necesidad.' },
+export const PRESTAMOS_FEATURES = [
+  { icon: '⚡', title: 'Atención Rápida', desc: 'Respuesta inmediata a tu solicitud, sin largas esperas ni trámites complicados.' },
+  { icon: '📊', title: 'Evaluación Transparente', desc: 'Tasación justa y clara de tu garantía, sin costos ocultos ni sorpresas.' },
+  { icon: '🔒', title: 'Confidencialidad', desc: 'Tu información y operación están protegidas con total discreción y privacidad.' },
+  { icon: '🤝', title: 'Asesoría Personalizada', desc: 'Te acompañamos en cada paso del proceso con atención personalizada.' },
 ];
 
-export const WHY_US = [
-  {
-    title: 'Atención Personalizada',
-    desc: 'Cada cliente recibe un trato único. Escuchamos, entendemos y diseñamos soluciones a tu medida.',
-    icon: '👤',
-  },
-  {
-    title: 'Calidad y Compromiso',
-    desc: 'No entregamos trabajos a medias. Cada proyecto lleva nuestra firma de excelencia.',
-    icon: '⭐',
-  },
-  {
-    title: 'Soluciones Adaptadas',
-    desc: 'Flexible en presupuesto, firme en calidad. Encontramos la mejor solución para tu situación.',
-    icon: '🎯',
-  },
-  {
-    title: 'Crecimiento Continuo',
-    desc: 'Nos actualizamos constantemente para ofrecerte las mejores técnicas y materiales del mercado.',
-    icon: '📈',
-  },
+export const DISENOS_SERVICIOS = [
+  'Diseño residencial',
+  'Diseño comercial',
+  'Remodelaciones',
+  'Distribución de espacios',
+  'Asesoría en decoración',
+];
+
+export const DISENOS_GALERIA = [
+  'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&q=80',
+  'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&q=80',
+  'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80',
+  'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80',
+];
+
+export const TOPOGRAFIA_SERVICIOS = [
+  { icon: '📏', title: 'Levantamientos Topográficos', desc: 'Medición precisa del terreno para cualquier tipo de proyecto.' },
+  { icon: '🔁', title: 'Replanteo de Obras', desc: 'Materialización en campo de los puntos definidos en planos.' },
+  { icon: '〰️', title: 'Curvas de Nivel', desc: 'Representación precisa del relieve del terreno.' },
+  { icon: '🌐', title: 'Georreferenciación', desc: 'Ubicación exacta de puntos usando coordenadas GPS.' },
+  { icon: '🗺️', title: 'Planos Topográficos', desc: 'Elaboración de planos detallados para uso técnico y legal.' },
+];
+
+export const TOPOGRAFIA_GALERIA = [
+  'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80',
+  'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&q=80',
+  'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80',
+];
+
+export const PRODUCTOS = [
+  { id: 1, nombre: 'Escritorio Ejecutivo', desc: 'Diseño moderno y funcional para espacios de trabajo. Medidas a tu elección.', image: 'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=600&q=80' },
+  { id: 2, nombre: 'Closet Modular', desc: 'Sistema de organización personalizado con múltiples configuraciones internas.', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80' },
+  { id: 3, nombre: 'Cocina Integral', desc: 'Muebles de cocina a medida con acabados en melamina de alta durabilidad.', image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80' },
+  { id: 4, nombre: 'Estantería', desc: 'Estantes funcionales para hogar u oficina, adaptados a tu espacio.', image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80' },
+  { id: 5, nombre: 'Centro de Entretenimiento', desc: 'Mueble TV diseñado para organizar equipos y decorar tu sala.', image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80' },
+  { id: 6, nombre: 'Mueble de Baño', desc: 'Vanitorios y muebles de baño a medida en melamina resistente a la humedad.', image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80' },
 ];

@@ -1,20 +1,24 @@
 import { useState, useEffect } from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import './Navbar.css';
 
 const NAV_LINKS = [
-  { to: '/', label: 'Inicio' },
-  { to: '/nosotros', label: 'Nosotros' },
-  { to: '/servicios', label: 'Servicios' },
-  { to: '/proyectos', label: 'Proyectos' },
-  { to: '/contacto', label: 'Contacto' },
+  { to: 'proyectos', label: 'Proyectos' },
+  { to: 'prestamos', label: 'Préstamos' },
+  { to: 'disenos', label: 'Diseños' },
+  { to: 'topografia', label: 'Topografía' },
+  { to: 'productos', label: 'Productos' },
+  { to: 'contacto', label: 'Contacto' },
 ];
+
+function scrollToSection(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth' });
+}
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -22,37 +26,33 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  useEffect(() => setOpen(false), [location]);
-
   return (
     <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="navbar__inner container">
-        <Link to="/" className="navbar__logo">
+        <button
+          className="navbar__logo"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        >
           <span className="navbar__logo-mark">GR</span>
           <span className="navbar__logo-text">Grupo Rules</span>
-        </Link>
+        </button>
 
         <nav className={`navbar__nav ${open ? 'navbar__nav--open' : ''}`}>
           {NAV_LINKS.map(({ to, label }) => (
-            <NavLink
+            <button
               key={to}
-              to={to}
-              end={to === '/'}
-              className={({ isActive }) =>
-                `navbar__link ${isActive ? 'navbar__link--active' : ''}`
-              }
+              className="navbar__link"
+              onClick={() => { scrollToSection(to); setOpen(false); }}
             >
               {label}
-            </NavLink>
+            </button>
           ))}
-          <a
-            href="https://wa.me/51999999999?text=Hola,%20me%20gustaría%20solicitar%20información%20sobre%20sus%20servicios."
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
             className="btn btn-primary navbar__cta"
+            onClick={() => { scrollToSection('contacto'); setOpen(false); }}
           >
             Contáctanos
-          </a>
+          </button>
         </nav>
 
         <button
