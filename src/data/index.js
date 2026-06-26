@@ -1,48 +1,23 @@
 export const PROJECTS = [
-  {
-    id: 1,
-    title: 'Apartamento Minimalista',
-    category: 'Diseño de Interiores',
+  { id: 1, title: 'Apartamento Minimalista', category: 'diseno-interiores', categoryLabel: 'Diseño de Interiores', year: '2024',
     description: 'Rediseño completo de un apartamento de 80m², optimizando espacios y creando ambientes luminosos.',
-    image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&q=80',
-  },
-  {
-    id: 2,
-    title: 'Levantamiento Zona Industrial',
-    category: 'Topografía',
+    image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&q=80' },
+  { id: 2, title: 'Levantamiento Zona Industrial', category: 'topografia', categoryLabel: 'Topografía', year: '2024',
     description: 'Levantamiento topográfico de 5 hectáreas para proyecto industrial con georreferenciación completa.',
-    image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&q=80',
-  },
-  {
-    id: 3,
-    title: 'Cocina Integral Moderna',
-    category: 'Melamina',
+    image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&q=80' },
+  { id: 3, title: 'Cocina Integral Moderna', category: 'melamina', categoryLabel: 'Melamina', year: '2023',
     description: 'Diseño y fabricación de cocina integral con isla central en melamina premium.',
-    image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80',
-  },
-  {
-    id: 4,
-    title: 'Oficina Corporativa',
-    category: 'Diseño de Interiores',
+    image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80' },
+  { id: 4, title: 'Oficina Corporativa', category: 'diseno-interiores', categoryLabel: 'Diseño de Interiores', year: '2023',
     description: 'Transformación de oficina corporativa para 30 personas con concepto open space.',
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80',
-  },
-  {
-    id: 5,
-    title: 'Replanteo Urbanización',
-    category: 'Topografía',
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80' },
+  { id: 5, title: 'Replanteo Urbanización', category: 'topografia', categoryLabel: 'Topografía', year: '2023',
     description: 'Replanteo de obras para urbanización residencial con 120 lotes.',
-    image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80',
-  },
-  {
-    id: 6,
-    title: 'Closet Vestidor Premium',
-    category: 'Melamina',
+    image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80' },
+  { id: 6, title: 'Closet Vestidor Premium', category: 'melamina', categoryLabel: 'Melamina', year: '2024',
     description: 'Vestidor de 12m² con sistema de organización modular en melamina blanca.',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
-  },
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80' },
 ];
-
 export const PRESTAMOS_FEATURES = [
   { icon: '⚡', title: 'Atención Rápida', desc: 'Respuesta inmediata a tu solicitud, sin largas esperas ni trámites complicados.' },
   { icon: '📊', title: 'Evaluación Transparente', desc: 'Tasación justa y clara de tu garantía, sin costos ocultos ni sorpresas.' },
@@ -86,4 +61,42 @@ export const PRODUCTOS = [
   { id: 4, nombre: 'Estantería', desc: 'Estantes funcionales para hogar u oficina, adaptados a tu espacio.', image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80' },
   { id: 5, nombre: 'Centro de Entretenimiento', desc: 'Mueble TV diseñado para organizar equipos y decorar tu sala.', image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80' },
   { id: 6, nombre: 'Mueble de Baño', desc: 'Vanitorios y muebles de baño a medida en melamina resistente a la humedad.', image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80' },
+];
+export const VALUES = [
+  { title: 'Compromiso', desc: 'Cada proyecto se trata con la misma dedicación, sin importar su tamaño.' },
+  { title: 'Calidad', desc: 'Buscamos la excelencia en cada detalle, desde la idea hasta la entrega final.' },
+  { title: 'Transparencia', desc: 'Procesos claros y honestos, sin costos ocultos ni sorpresas.' },
+  { title: 'Confianza', desc: 'Construimos relaciones duraderas basadas en resultados reales.' },
+  { title: 'Innovación', desc: 'Soluciones actualizadas que se adaptan a las necesidades de cada cliente.' },
+];
+
+export const SERVICES = [
+  {
+    id: 'financiamiento',
+    title: 'Préstamos con Garantía',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80',
+    fullDesc: 'Soluciones financieras rápidas mediante garantía de bienes, con atención personalizada, tasación justa y procesos completamente transparentes.',
+    subservices: ['Evaluación gratuita de garantía', 'Desembolso rápido', 'Tasas competitivas', 'Asesoría personalizada', 'Confidencialidad total'],
+  },
+  {
+    id: 'diseno-interiores',
+    title: 'Diseño de Interiores',
+    image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80',
+    fullDesc: 'Transformamos espacios residenciales y comerciales para hacerlos más funcionales, cómodos y atractivos.',
+    subservices: DISENOS_SERVICIOS,
+  },
+  {
+    id: 'topografia',
+    title: 'Topografía',
+    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80',
+    fullDesc: 'Servicios topográficos precisos para proyectos de construcción y gestión territorial.',
+    subservices: TOPOGRAFIA_SERVICIOS.map(s => s.title),
+  },
+  {
+    id: 'melamina',
+    title: 'Productos de Melamina',
+    image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80',
+    fullDesc: 'Muebles funcionales y personalizados fabricados a tu medida, con acabados de alta durabilidad.',
+    subservices: PRODUCTOS.map(p => p.nombre),
+  },
 ];

@@ -1,10 +1,15 @@
+import { Link } from 'react-router-dom';
 import { MessageCircle, Mail } from 'lucide-react';
 import './Footer.css';
 
-function scrollTo(id) {
-  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-}
-
+const FOOTER_LINKS = [
+  { to: '/proyectos', label: 'Proyectos' },
+  { to: '/servicios#financiamiento', label: 'Préstamos' },
+  { to: '/servicios#diseno-interiores', label: 'Diseños' },
+  { to: '/servicios#topografia', label: 'Topografía' },
+  { to: '/servicios#melamina', label: 'Productos' },
+  { to: '/contacto', label: 'Contacto' },
+];
 export default function Footer() {
   return (
     <footer className="footer">
@@ -34,17 +39,8 @@ export default function Footer() {
         <div className="footer__nav">
           <h4 className="footer__nav-title">Navegación</h4>
           <ul className="footer__nav-list">
-            {[
-              { id: 'proyectos', label: 'Proyectos' },
-              { id: 'prestamos', label: 'Préstamos' },
-              { id: 'disenos', label: 'Diseños' },
-              { id: 'topografia', label: 'Topografía' },
-              { id: 'productos', label: 'Productos' },
-              { id: 'contacto', label: 'Contacto' },
-            ].map(({ id, label }) => (
-              <li key={id}>
-                <button onClick={() => scrollTo(id)}>{label}</button>
-              </li>
+            {FOOTER_LINKS.map(({ to, label }) => (
+              <li key={to}><Link to={to}>{label}</Link></li>
             ))}
           </ul>
         </div>

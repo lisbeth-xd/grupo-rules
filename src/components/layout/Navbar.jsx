@@ -1,24 +1,21 @@
 import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import './Navbar.css';
 
 const NAV_LINKS = [
-  { to: 'proyectos', label: 'Proyectos' },
-  { to: 'prestamos', label: 'Préstamos' },
-  { to: 'disenos', label: 'Diseños' },
-  { to: 'topografia', label: 'Topografía' },
-  { to: 'productos', label: 'Productos' },
-  { to: 'contacto', label: 'Contacto' },
+  { to: '/proyectos', label: 'Proyectos' },
+  { to: '/servicios#financiamiento', label: 'Préstamos' },
+  { to: '/servicios#diseno-interiores', label: 'Diseños' },
+  { to: '/servicios#topografia', label: 'Topografía' },
+  { to: '/servicios#melamina', label: 'Productos' },
+  { to: '/contacto', label: 'Contacto' },
 ];
-
-function scrollToSection(id) {
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: 'smooth' });
-}
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -26,40 +23,29 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // cierra el menú móvil al cambiar de página
+  useEffect(() => { setOpen(false); }, [location]);
+
   return (
     <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="navbar__inner container">
-        <button
-          className="navbar__logo"
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        >
+        <Link to="/" className="navbar__logo">
           <span className="navbar__logo-mark">GR</span>
           <span className="navbar__logo-text">Grupo Rules</span>
-        </button>
+        </Link>
 
         <nav className={`navbar__nav ${open ? 'navbar__nav--open' : ''}`}>
           {NAV_LINKS.map(({ to, label }) => (
-            <button
-              key={to}
-              className="navbar__link"
-              onClick={() => { scrollToSection(to); setOpen(false); }}
-            >
+            <Link key={to} to={to} className="navbar__link" onClick={() => setOpen(false)}>
               {label}
-            </button>
+            </Link>
           ))}
-          <button
-            className="btn btn-primary navbar__cta"
-            onClick={() => { scrollToSection('contacto'); setOpen(false); }}
-          >
+          <Link to="/contacto" className="btn btn-primary navbar__cta" onClick={() => setOpen(false)}>
             Contáctanos
-          </button>
+          </Link>
         </nav>
 
-        <button
-          className="navbar__toggle"
-          onClick={() => setOpen(o => !o)}
-          aria-label="Toggle menu"
-        >
+        <button className="navbar__toggle" onClick={() => setOpen(o => !o)} aria-label="Toggle menu">
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
