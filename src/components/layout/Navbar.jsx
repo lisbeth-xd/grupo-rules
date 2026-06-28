@@ -5,13 +5,12 @@ import './Navbar.css';
 
 const NAV_LINKS = [
   { to: '/proyectos', label: 'Proyectos' },
-  { to: '/servicios#financiamiento', label: 'Préstamos' },
-  { to: '/servicios#diseno-interiores', label: 'Diseños' },
-  { to: '/servicios#topografia', label: 'Topografía' },
-  { to: '/servicios#melamina', label: 'Productos' },
+  { to: '/servicios/financiamiento', label: 'Préstamos' },
+  { to: '/servicios/diseno-interiores', label: 'Diseños' },
+  { to: '/servicios/topografia', label: 'Topografía' },
+  { to: '/servicios/melamina', label: 'Productos' },
   { to: '/contacto', label: 'Contacto' },
 ];
-
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -23,7 +22,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // cierra el menú móvil al cambiar de página
   useEffect(() => { setOpen(false); }, [location]);
 
   return (
@@ -36,9 +34,16 @@ export default function Navbar() {
 
         <nav className={`navbar__nav ${open ? 'navbar__nav--open' : ''}`}>
           {NAV_LINKS.map(({ to, label }) => (
-            <Link key={to} to={to} className="navbar__link" onClick={() => setOpen(false)}>
+            <a
+              key={to}
+              href={to}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="navbar__link"
+              onClick={() => setOpen(false)}
+            >
               {label}
-            </Link>
+            </a>
           ))}
           <Link to="/contacto" className="btn btn-primary navbar__cta" onClick={() => setOpen(false)}>
             Contáctanos

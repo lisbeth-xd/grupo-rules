@@ -50,22 +50,22 @@ export default function Home() {
             <p className="section-subtitle">Cuatro especialidades pensadas para cubrir tus necesidades.</p>
           </div>
           <div className="home-services-grid">
-            <Link to="/servicios#financiamiento" className="home-service-card">
+            <Link to="/servicios/financiamiento" className="home-service-card">
               <span className="home-service-card__icon">💰</span>
               <h3>Préstamos con Garantía</h3>
               <p>Financiamiento rápido y transparente.</p>
             </Link>
-            <Link to="/servicios#diseno-interiores" className="home-service-card">
+            <Link to="/servicios/diseno-interiores" className="home-service-card">
               <span className="home-service-card__icon">🏠</span>
               <h3>Diseño de Interiores</h3>
               <p>Espacios funcionales y a tu medida.</p>
             </Link>
-            <Link to="/servicios#topografia" className="home-service-card">
+            <Link to="/servicios/topografia" className="home-service-card">
               <span className="home-service-card__icon">📐</span>
               <h3>Topografía</h3>
               <p>Levantamientos y planos precisos.</p>
             </Link>
-            <Link to="/servicios#melamina" className="home-service-card">
+            <Link to="/servicios/melamina" className="home-service-card">
               <span className="home-service-card__icon">🛋️</span>
               <h3>Productos de Melamina</h3>
               <p>Muebles a medida de alta durabilidad.</p>

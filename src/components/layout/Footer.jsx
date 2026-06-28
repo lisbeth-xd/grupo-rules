@@ -1,15 +1,15 @@
-import { Link } from 'react-router-dom';
 import { MessageCircle, Mail } from 'lucide-react';
 import './Footer.css';
 
 const FOOTER_LINKS = [
   { to: '/proyectos', label: 'Proyectos' },
-  { to: '/servicios#financiamiento', label: 'Préstamos' },
-  { to: '/servicios#diseno-interiores', label: 'Diseños' },
-  { to: '/servicios#topografia', label: 'Topografía' },
-  { to: '/servicios#melamina', label: 'Productos' },
+  { to: '/servicios/financiamiento', label: 'Préstamos' },
+  { to: '/servicios/diseno-interiores', label: 'Diseños' },
+  { to: '/servicios/topografia', label: 'Topografía' },
+  { to: '/servicios/melamina', label: 'Productos' },
   { to: '/contacto', label: 'Contacto' },
 ];
+
 export default function Footer() {
   return (
     <footer className="footer">
@@ -40,7 +40,9 @@ export default function Footer() {
           <h4 className="footer__nav-title">Navegación</h4>
           <ul className="footer__nav-list">
             {FOOTER_LINKS.map(({ to, label }) => (
-              <li key={to}><Link to={to}>{label}</Link></li>
+              <li key={to}>
+                <a href={to} target="_blank" rel="noopener noreferrer">{label}</a>
+              </li>
             ))}
           </ul>
         </div>
